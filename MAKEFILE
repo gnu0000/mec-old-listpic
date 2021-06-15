@@ -1,0 +1,12 @@
+all: listpic.exe
+
+
+listpic.obj : listpic.c
+   cl /AL /W3 /c /Od /Zip /nologo listpic.c
+
+arg2.obj : arg2.c
+   cl /AL /W3 /c /Od /Zip /nologo arg2.c
+
+
+listpic.exe : listpic.obj arg2.obj
+   link listpic arg2/CO,,NUL,os2 llibcep implode/nod/noe/nologo,$*.def
